@@ -1,0 +1,159 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+:root{
+    --text-color: white;
+    --bg-url: url(images/Mobile/Background.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.2);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --hightlight-color: rgba(0, 0, 0, 0.2);
+    --switch-url: url(images/Mobile/button.svg);
+    --switch-span: rgba(255, 255, 255, 0.1);
+    --switch-span-border: rgba(255, 255, 255, 0.5);
+}
+
+.light{
+    --text-color: black;
+    --bg-url: url(images/Mobile/bgL.jpg);
+    --stroke-color:rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --hightlight-color: rgba(0, 0, 0, 0.2);
+    --switch-url: url(images/Mobile/button2.svg);
+    --switch-span: rgba(0, 0, 0, 0.05);;
+    --switch-span-border: rgba(0, 0, 0, 0.5);
+}
+
+body{
+    background: var(--bg-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    /*adiciona a imagem->ajusta a repetição causada->e usar o comando de cobrir a pagina(no contexto de usar uma imagem de fundo)*/
+
+}
+body *{
+    font-family: 'Inter' sans-serif;
+    color: var(--text-color);
+}
+
+ #container{
+    width: 360px;
+    margin: 56px auto 0px auto;
+    padding: 0 24px;
+}
+
+#profile{
+    text-align: center;
+    padding: 24px ;
+}
+
+#profile img{
+    width: 112px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+#profile p{
+    font-weight: 500;
+    /*font-size: 16px;---- por padrão os navegadores ja vem com size de 16px*/
+    line-height: 24px;
+    padding-bottom: 64px;
+}
+
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+    top: -34px;
+}
+
+#switch button{
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    background-image: var(--switch-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    position: absolute ;
+    z-index: 1;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background-color: var(--switch-span);
+    border: 1px solid var(--switch-span-border);
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+}
+
+
+.light #switch button{
+    right: initial;
+    left: 0;
+}
+
+ ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+}
+
+ul li a{
+    
+    display: flex;
+    justify-content: center;
+    padding: 16px 24px;
+    align-items: center;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: 500; /*acima de 400 pixel é bold*/ 
+    transition: all 0.5s;
+}
+
+ul li a:hover{
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid var(--stroke-color);
+    
+}
+
+#sociallinks{
+    display: flex;
+    gap: 32px;
+    padding: 24px 0;
+    font-size: 35px;
+    justify-content: center;
+}
+
+#sociallinks a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+#sociallinks a:hover{
+    background: var(--hightlight-color);
+
+}
+/*antes de colocar o a antes de :hover ele fazia modificações 
+no conteudo como um todo e apos isso o A causa uma identificação separada*/
+
